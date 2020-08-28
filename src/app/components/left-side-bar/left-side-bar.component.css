@@ -1,0 +1,18 @@
+.app-left-side {
+  min-width: 400px;
+  background: rgb(243, 243, 243);
+  padding: 30px;
+
+  min-height: 100vh;
+  box-shadow: 0 10px 10px #ccc;
+}
+
+.app-left-side-head {
+  text-align: center;
+  border-bottom: 2px solid #555;
+  padding-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+button {
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: rgb(184, 54, 21);
+  color: #eee;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(138, 40, 15);
+}
+
+button:active {
+  transform: scale(0.95);
+}
