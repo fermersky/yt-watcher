@@ -1,0 +1,24 @@
+.app-popup {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: #fff;
+  padding: 30px 15px;
+
+  transition: 0.3s ease-out;
+  transition-property: top, opacity;
+
+  width: 600px;
+
+  border-radius: 20px;
+}
+
+.hidden {
+  top: 0;
+  opacity: 0;
+}
+
+.visible {
+  top: 50%;
+  opacity: 1;
+}

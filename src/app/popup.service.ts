@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class PopupService {
-  public popupStatus: 'visible' | 'hidden';
+  private popupStatus: 'visible' | 'hidden';
 
-  constructor() {}
+  private subject = new Subject<string>();
+  public popupStatus$: Observable<string>;
+
+  constructor() {
+    this.popupStatus$ = this.subject.asObservable();
+  }
 
   toggle(): void {
     this.popupStatus = this.popupStatus === 'visible' ? 'hidden' : 'visible';
+    this.subject.next(this.popupStatus);
   }
 }

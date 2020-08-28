@@ -7,9 +7,10 @@ import { RightSideBarComponent } from './components/right-side-bar/right-side-ba
 import { PageComponent } from './components/page/page.component';
 import { ButtonComponent } from './components/button/button.component';
 import { PopupComponent } from './components/popup/popup.component';
+import { PopupYtContentComponent } from './components/popup-yt-content/popup-yt-content.component';
 
 @NgModule({
-  declarations: [AppComponent, LeftSideBarComponent, RightSideBarComponent, PageComponent, ButtonComponent, PopupComponent],
+  declarations: [AppComponent, LeftSideBarComponent, RightSideBarComponent, PageComponent, ButtonComponent, PopupComponent, PopupYtContentComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,23 @@
+.app-popup-yt-content {
+  text-align: center;
+}
+
+.app-yt-link-field {
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  width: 100%;
+
+  border: 1px solid rgb(214, 214, 214);
+  margin: 20px 0;
+}
+
+.btns-group {
+  width: 50%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

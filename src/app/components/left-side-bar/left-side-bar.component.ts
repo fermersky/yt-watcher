@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PopupService } from 'src/app/popup.service';
 
 @Component({
   selector: 'app-left-side-bar',
@@ -6,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-side-bar.component.css'],
 })
 export class LeftSideBarComponent implements OnInit {
-  constructor() {}
+  constructor(private popup: PopupService) {}
 
   ngOnInit(): void {}
 
   onAddVideoBtnClick(): void {
-    console.log('here');
+    this.popup.toggle();
   }
 }
