@@ -2,7 +2,7 @@ button {
   padding: 10px 20px;
   font-size: 1.3rem;
   font-weight: bold;
-  background: rgb(184, 54, 21);
+  background: #005cb2;
   color: #eee;
   border: none;
   outline: none;
@@ -13,7 +13,7 @@ button {
 }
 
 button:hover {
-  background: rgb(138, 40, 15);
+  background: #013c74;
 }
 
 button:active {

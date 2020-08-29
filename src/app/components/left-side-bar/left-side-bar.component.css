@@ -1,10 +1,12 @@
 .app-left-side {
   min-width: 400px;
-  background: rgb(243, 243, 243);
+  background: #fdfdfd;
   padding: 30px;
 
   min-height: 100vh;
   box-shadow: 0 10px 10px #ccc;
+
+  border-right: 2px dotted rgb(216, 216, 216);
 }
 
 .app-left-side-head {

@@ -13,6 +13,7 @@ import { VideosContainerComponent } from './components/videos-container.componen
 import { VidRootDirective } from './directives/vid-root.directive';
 import { VideoHandlersListContainerComponent } from './components/video-handlers-list-container.component';
 import { VideoHandlerComponent } from './components/video-handler/video-handler.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { VideoHandlerComponent } from './components/video-handler/video-handler.
     VidRootDirective,
     VideoHandlersListContainerComponent,
     VideoHandlerComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule],
   providers: [],
