@@ -22,10 +22,17 @@ export class VideosContainerComponent implements OnInit, OnDestroy {
     const viewContainerRef = this.vidRootDir.viewContainerRef;
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(VideoYTPlayerComponent);
 
-    this.subs.sink = this.videos.videoAttached$.subscribe((videoId) => {
+    this.subs.sink = this.videos.videoRequested$.subscribe((videoId) => {
       const componentRef = viewContainerRef.createComponent(componentFactory);
       componentRef.instance.videoId = videoId;
+      componentRef.instance.playerInstantiated.subscribe((player) =>
+        this.playerInstantiated(videoId, player)
+      );
     });
+  }
+
+  private playerInstantiated(videoId: string, player: any): void {
+    this.videos.attachPlayer(videoId, player);
   }
 
   private insertLoadIframeScript(): void {
