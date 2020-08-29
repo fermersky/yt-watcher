@@ -18,6 +18,7 @@ export class VideoYTPlayerComponent implements AfterViewInit {
       height: '200',
       width: '300',
       videoId: this.videoId,
+      playerVars: { autoplay: 1, controls: 0 },
       events: {
         onReady: () => this.onPlayerReady(),
       },
@@ -25,7 +26,6 @@ export class VideoYTPlayerComponent implements AfterViewInit {
   }
 
   onPlayerReady(): void {
-    this.player.playVideo();
     this.playerInstantiated.emit(this.player);
   }
 }

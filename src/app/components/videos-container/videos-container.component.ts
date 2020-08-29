@@ -17,7 +17,7 @@ export class VideosContainerComponent implements OnInit, OnDestroy {
   constructor(private videos: VideosService, private componentFactoryResolver: ComponentFactoryResolver) {}
 
   ngOnInit(): void {
-    this.insertLoadIframeScript();
+    this.insertLoadedIframeScript();
 
     const viewContainerRef = this.vidRootDir.viewContainerRef;
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(VideoYTPlayerComponent);
@@ -35,7 +35,7 @@ export class VideosContainerComponent implements OnInit, OnDestroy {
     this.videos.attachPlayer(videoId, player);
   }
 
-  private insertLoadIframeScript(): void {
+  private insertLoadedIframeScript(): void {
     const tag = document.createElement('script');
 
     tag.src = 'https://www.youtube.com/iframe_api';
