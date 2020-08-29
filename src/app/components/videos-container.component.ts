@@ -2,12 +2,23 @@ import { Component, OnInit, OnDestroy, ViewChild, ComponentFactoryResolver } fro
 import { VideosService } from 'src/app/videos.service';
 import { SubSink } from 'subsink';
 import { VidRootDirective } from 'src/app/directives/vid-root.directive';
-import { VideoYTPlayerComponent } from '../video-ytplayer/video-ytplayer.component';
+import { VideoYTPlayerComponent } from './video-ytplayer.component';
 
 @Component({
   selector: 'app-videos-container',
-  templateUrl: './videos-container.component.html',
-  styleUrls: ['./videos-container.component.css'],
+  template: `
+    <div class="videos-container">
+      <ng-template appVidRoot></ng-template>
+    </div>
+  `,
+  styles: [
+    `
+      .videos-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    `,
+  ],
 })
 export class VideosContainerComponent implements OnInit, OnDestroy {
   @ViewChild(VidRootDirective, { static: true }) vidRootDir: VidRootDirective;

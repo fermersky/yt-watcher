@@ -5,13 +5,17 @@ import { IVideo } from './interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class VideosService {
-  public videos: IVideo[] = [];
+  private videos: IVideo[] = [];
 
-  private subject = new Subject<string>();
+  private reqSubject = new Subject<string>();
   public videoRequested$: Observable<string>;
 
+  private plSubject = new Subject<IVideo>();
+  public videoPlayerAttached$: Observable<IVideo>;
+
   constructor() {
-    this.videoRequested$ = this.subject.asObservable();
+    this.videoRequested$ = this.reqSubject.asObservable();
+    this.videoPlayerAttached$ = this.plSubject.asObservable();
   }
 
   addFromUrl(url: string): void {
@@ -19,7 +23,7 @@ export class VideosService {
     const videoId = v;
 
     this.videos.push({ videoId, status: 'onPlay', title: '', player: {} });
-    this.subject.next(videoId);
+    this.reqSubject.next(videoId);
   }
 
   attachPlayer(videoId: string, player: any): void {
@@ -27,6 +31,29 @@ export class VideosService {
     const { title } = player.playerInfo.videoData;
 
     this.videos[index] = { ...this.videos[index], player, title };
+
+    this.plSubject.next(this.videos[index]);
+  }
+
+  play(videoId: string): void {
+    const index = this.videos.findIndex((v) => v.videoId === videoId);
+
+    this.videos[index].status = 'onPlay';
+    this.videos[index].player.playVideo();
+  }
+
+  pause(videoId: string): void {
+    const index = this.videos.findIndex((v) => v.videoId === videoId);
+
+    this.videos[index].status = 'onPause';
+    this.videos[index].player.pauseVideo();
+  }
+
+  stop(videoId: string): void {
+    const index = this.videos.findIndex((v) => v.videoId === videoId);
+
+    this.videos[index].status = 'onStop';
+    this.videos[index].player.stopVideo();
   }
 
   private getParamsFromUrl(url: string): any {

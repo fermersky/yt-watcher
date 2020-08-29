@@ -1,0 +1,10 @@
+<div class="app-video-handler">
+  <h3>{{ videoTitle }}</h3>
+  <div class="btn-group">
+    <app-button (btnClick)="togglePlay()" style="font-size: 0.7rem">
+      <i *ngIf="videoStatus === 'onPause'" class="fas fa-play"></i>
+      <i *ngIf="videoStatus === 'onPlay'" class="fas fa-pause"></i>
+    </app-button>
+    <app-button (btnClick)="stop()" style="font-size: 0.7rem"><i class="fas fa-stop"></i></app-button>
+  </div>
+</div>

@@ -1,9 +1,26 @@
-import { Component, Input, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  AfterViewInit,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-video-ytplayer',
-  templateUrl: './video-ytplayer.component.html',
-  styleUrls: ['./video-ytplayer.component.css'],
+  template: `<div class="app-yt-video"><div [id]="'video-' + videoId"></div></div>`,
+  styles: [
+    `
+      .app-yt-video {
+        padding: 10px;
+        border: 2px dotted rgb(177, 177, 177);
+        border-radius: 15px;
+        margin: 20px;
+      }
+    `,
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VideoYTPlayerComponent implements AfterViewInit {
   @Input() videoId: string;
