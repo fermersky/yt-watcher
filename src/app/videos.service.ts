@@ -19,11 +19,15 @@ export class VideosService {
   }
 
   addFromUrl(url: string): void {
-    const { v } = this.getParamsFromUrl(url);
-    const videoId = v;
+    try {
+      const { v } = this.getParamsFromUrl(url);
+      const videoId = v;
 
-    this.videos.push({ videoId, status: 'onPlay', title: '', player: {} });
-    this.reqSubject.next(videoId);
+      this.videos.push({ videoId, status: 'onPlay', title: '', player: {} });
+      this.reqSubject.next(videoId);
+    } catch (er) {
+      alert('URL is not valid');
+    }
   }
 
   attachPlayer(videoId: string, player: any): void {
