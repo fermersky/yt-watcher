@@ -18,5 +18,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.videos.playAll();
   }
 
+  pauseAll(): void {
+    this.videos.pauseAll();
+  }
+
+  stopAll(): void {
+    this.videos.stopAll();
+  }
+
   ngOnDestroy(): void {}
 }

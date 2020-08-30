@@ -27,7 +27,6 @@ export class VideoHandlersListContainerComponent implements OnInit, OnDestroy {
 
       video.statusChanged = (status) => {
         componentRef.instance.videoStatus = status;
-        console.log(componentRef.instance.videoStatus);
       };
 
       componentRef.instance.onPlay.subscribe((_) => this.onPlayHandler(video.videoId));

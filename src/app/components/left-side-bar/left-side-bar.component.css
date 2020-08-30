@@ -1,7 +1,7 @@
 .app-left-side {
   min-width: 400px;
   background: #fdfdfd;
-  padding: 30px;
+  padding: 0 30px;
 
   min-height: 100vh;
   box-shadow: 0 10px 10px #ccc;
@@ -11,7 +11,7 @@
 
 .app-left-side-head {
   text-align: center;
-  border-bottom: 2px solid #555;
+  border-bottom: 2px solid #006154;
   padding-bottom: 20px;
 }
 

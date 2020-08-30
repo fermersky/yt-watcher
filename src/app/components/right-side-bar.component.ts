@@ -13,7 +13,7 @@ import { VideosService } from '../videos.service';
       .app-right-side {
         min-height: 100vh;
         background: #fdfdfd;
-        padding: 20px 30px;
+        padding: 0 30px;
       }
     `,
   ],

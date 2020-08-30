@@ -19,6 +19,10 @@ export class PopupComponent implements OnInit, OnDestroy {
     });
   }
 
+  close(): void {
+    this.popup.toggle();
+  }
+
   ngOnDestroy(): void {
     this.subs.unsubscribe();
   }

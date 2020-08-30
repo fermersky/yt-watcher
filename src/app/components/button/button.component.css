@@ -1,8 +1,9 @@
 button {
-  padding: 7px 15px;
-  font-size: 1.3rem;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
   font-weight: bold;
-  background: #005cb2;
+  background: #01a58f;
   color: #eee;
   border: none;
   outline: none;
@@ -13,7 +14,7 @@ button {
 }
 
 button:hover {
-  background: #013c74;
+  background: #018573;
 }
 
 button:active {

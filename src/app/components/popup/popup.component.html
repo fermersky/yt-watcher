@@ -1,3 +1,3 @@
-<div class="app-popup" [ngClass]="popupStatus">
+<div (clickout)="close()" class="app-popup" [ngClass]="popupStatus">
   <ng-content></ng-content>
 </div>
