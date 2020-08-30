@@ -1,5 +1,11 @@
 <header class="app-header">
-  <app-button (btnClick)="playAll()"><i class="fas fa-play"></i> Play All</app-button>
-  <app-button (btnClick)="pauseAll()"><i class="fas fa-pause"></i> Pause All</app-button>
-  <app-button (btnClick)="stopAll()"><i class="fas fa-stop"></i> Stop All</app-button>
+  <div>
+    <app-button (btnClick)="playAll()"><i class="fas fa-play"></i> Play All</app-button>
+    <app-button (btnClick)="pauseAll()"><i class="fas fa-pause"></i> Pause All</app-button>
+    <app-button (btnClick)="stopAll()"><i class="fas fa-stop"></i> Stop All</app-button>
+  </div>
+  <div>
+    <a class="router-link" [routerLink]="['youtube']">Youtube</a>
+    <a class="router-link" [routerLink]="['form']">Form Builder</a>
+  </div>
 </header>

@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { YoutubeVideosComponent } from './components/youtube-videos.component';
-import { FormBuilderComponent } from './components/form-builder/form-builder.component';
 import { LeftSideBarComponent } from './components/left-side-bar/left-side-bar.component';
 import { RightSideBarComponent } from './components/right-side-bar.component';
 import { PageComponent } from './components/page.component';
@@ -17,6 +18,8 @@ import { VidRootDirective } from './directives/vid-root.directive';
 import { VideoHandlersListContainerComponent } from './components/video-handlers-list-container.component';
 import { VideoHandlerComponent } from './components/video-handler/video-handler.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ErrorPipe } from './pipes/error.pipe';
+import { FormBuilderComponent } from './components/form-builder/form-builder.component';
 
 const routes: Routes = [
   { path: 'youtube', component: YoutubeVideosComponent },
@@ -40,9 +43,12 @@ const routes: Routes = [
     VideoHandlerComponent,
     HeaderComponent,
     YoutubeVideosComponent,
+    FormBuilderComponent,
+    ErrorPipe,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, CommonModule, RouterModule.forRoot(routes), ReactiveFormsModule],
   providers: [],
+  exports: [RouterModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

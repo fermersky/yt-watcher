@@ -1,0 +1,79 @@
+form {
+  color: #eee;
+  padding: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-control {
+  display: flex;
+  max-width: 420px;
+  margin-bottom: 20px;
+}
+
+.input-text {
+  flex-direction: column;
+}
+
+.input-text > input,
+.input-text > textarea {
+  background-color: rgb(29, 29, 29);
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  border-radius: 15px;
+  padding: 10px 20px;
+  color: #eee;
+  margin-top: 10px;
+}
+
+.input-text > label {
+  padding-left: 20px;
+}
+
+.input-checkbox {
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.input-checkbox > input {
+  margin-right: 10px;
+}
+
+.input-select {
+  flex-direction: column;
+}
+
+.input-select > label {
+  margin-right: 10px;
+  padding-left: 20px;
+}
+
+.input-select > select {
+  margin-right: 10px;
+  padding: 10px 15px;
+  background-color: rgb(29, 29, 29);
+  border: none;
+  outline: none;
+
+  color: #eee;
+  font-size: 1.1rem;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.errors {
+  color: red;
+  margin-left: 20px;
+  margin-top: 5px;
+}

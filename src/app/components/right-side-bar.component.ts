@@ -11,7 +11,7 @@ import { VideosService } from '../videos.service';
   styles: [
     `
       .app-right-side {
-        min-height: 100vh;
+        min-height: 80vh;
         background: #181818;
         padding: 0 30px;
       }
