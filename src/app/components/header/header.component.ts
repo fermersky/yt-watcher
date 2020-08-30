@@ -7,12 +7,8 @@ import { SubSink } from 'subsink';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements OnInit, OnDestroy {
-  private subs = new SubSink();
-
+export class HeaderComponent {
   constructor(private videos: VideosService) {}
-
-  ngOnInit(): void {}
 
   playAll(): void {
     this.videos.playAll();
@@ -25,6 +21,4 @@ export class HeaderComponent implements OnInit, OnDestroy {
   stopAll(): void {
     this.videos.stopAll();
   }
-
-  ngOnDestroy(): void {}
 }

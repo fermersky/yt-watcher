@@ -20,6 +20,7 @@ import { VideoHandlerComponent } from './components/video-handler/video-handler.
 import { HeaderComponent } from './components/header/header.component';
 import { ErrorPipe } from './pipes/error.pipe';
 import { FormBuilderComponent } from './components/form-builder/form-builder.component';
+import { FormFieldErrorsComponent } from './components/form-field-errors/form-field-errors.component';
 
 const routes: Routes = [
   { path: 'youtube', component: YoutubeVideosComponent },
@@ -45,6 +46,7 @@ const routes: Routes = [
     YoutubeVideosComponent,
     FormBuilderComponent,
     ErrorPipe,
+    FormFieldErrorsComponent,
   ],
   imports: [BrowserModule, CommonModule, RouterModule.forRoot(routes), ReactiveFormsModule],
   providers: [],

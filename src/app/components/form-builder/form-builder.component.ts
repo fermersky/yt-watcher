@@ -60,7 +60,12 @@ export class FormBuilderComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
-    console.log(this.myForm.value);
+    if (!this.myForm.valid) {
+      alert('form is not valid');
+    } else {
+      alert('check console!');
+      console.log(this.myForm.value);
+    }
   }
 
   private initalizeFormFields(): FormGroup {

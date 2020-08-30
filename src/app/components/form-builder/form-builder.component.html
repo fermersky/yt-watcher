@@ -4,53 +4,40 @@
       <label [for]="field.name">{{ field.label }}</label>
       <input [placeholder]="field.placeholder || ''" type="text" [formControlName]="field.name" />
 
-      <div
-        class="errors"
-        *ngIf="
-          myForm.get(field.name).errors && (myForm.get(field.name).touched || myForm.get(field.name).dirty)
-        "
-      >
-        <span *ngFor="let error of myForm.get(field.name).errors | keyvalue">
-          {{ error | error: field.name }}
-        </span>
-      </div>
+      <app-form-field-errors
+        [field]="myForm.get(field.name)"
+        [fieldName]="field.name"
+      ></app-form-field-errors>
     </div>
 
     <div class="form-control input-text" *ngSwitchCase="FieldType.Number">
       <label [for]="field.name">{{ field.label }}</label>
       <input [placeholder]="field.placeholder || ''" type="number" [formControlName]="field.name" />
 
-      <div
-        class="errors"
-        *ngIf="
-          myForm.get(field.name).errors && (myForm.get(field.name).touched || myForm.get(field.name).dirty)
-        "
-      >
-        <span *ngFor="let error of myForm.get(field.name).errors | keyvalue">
-          {{ error | error: field.name }}
-        </span>
-      </div>
+      <app-form-field-errors
+        [field]="myForm.get(field.name)"
+        [fieldName]="field.name"
+      ></app-form-field-errors>
     </div>
 
     <div class="form-control input-checkbox" *ngSwitchCase="FieldType.Checkbox">
       <input type="checkbox" [formControlName]="field.name" />
       <label [for]="field.name">{{ field.label }}</label>
 
-      <div
-        class="errors"
-        *ngIf="
-          myForm.get(field.name).errors && (myForm.get(field.name).touched || myForm.get(field.name).dirty)
-        "
-      >
-        <span *ngFor="let error of myForm.get(field.name).errors | keyvalue">
-          {{ error | error: field.name }}
-        </span>
-      </div>
+      <app-form-field-errors
+        [field]="myForm.get(field.name)"
+        [fieldName]="field.name"
+      ></app-form-field-errors>
     </div>
 
     <div class="form-control input-text" *ngSwitchCase="FieldType.Text">
       <label [for]="field.name">{{ field.label }}</label>
       <textarea [formControlName]="field.name" cols="30" rows="10"></textarea>
+
+      <app-form-field-errors
+        [field]="myForm.get(field.name)"
+        [fieldName]="field.name"
+      ></app-form-field-errors>
     </div>
 
     <div class="form-control input-checkbox" *ngSwitchCase="FieldType.Radio">
@@ -64,21 +51,15 @@
         <option [value]="option.value" *ngFor="let option of field.options">{{ option.display }}</option>
       </select>
 
-      <div
-        class="errors"
-        *ngIf="
-          myForm.get(field.name).errors && (myForm.get(field.name).touched || myForm.get(field.name).dirty)
-        "
-      >
-        <span *ngFor="let error of myForm.get(field.name).errors | keyvalue">
-          {{ error | error: field.name }}
-        </span>
-      </div>
+      <app-form-field-errors
+        [field]="myForm.get(field.name)"
+        [fieldName]="field.name"
+      ></app-form-field-errors>
     </div>
   </div>
 
   <code>{{ myForm.value | json }}</code>
   <br />
 
-  <app-button style="margin-top: 20px" type="submit">Submit></app-button>
+  <app-button style="margin-top: 20px" type="submit">Submit</app-button>
 </form>

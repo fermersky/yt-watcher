@@ -15,11 +15,9 @@ export class PopupYtContentComponent implements OnInit {
 
   onAddClick(): void {
     const url = this.urlField.nativeElement.value;
-
     if (!url) return;
 
     this.videos.addFromUrl(url);
-
     this.toggleAndClear();
   }
 

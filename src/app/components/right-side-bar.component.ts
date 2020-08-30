@@ -18,8 +18,6 @@ import { VideosService } from '../videos.service';
     `,
   ],
 })
-export class RightSideBarComponent implements OnInit {
-  constructor(private videos: VideosService) {}
-
-  ngOnInit(): void {}
+export class RightSideBarComponent {
+  constructor() {}
 }

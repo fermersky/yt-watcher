@@ -5,11 +5,7 @@ import { ValidationErrors } from '@angular/forms';
   name: 'error',
 })
 export class ErrorPipe implements PipeTransform {
-  private errorMessages = { required: 'is required', minlength: 'must be ' };
-
   transform(error: any, name: string): string {
-    console.log(error);
-
     const { key, value } = error;
 
     switch (key) {
