@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { YoutubeVideosComponent } from './components/youtube-videos.component';
+import { FormBuilderComponent } from './components/form-builder/form-builder.component';
 import { LeftSideBarComponent } from './components/left-side-bar/left-side-bar.component';
 import { RightSideBarComponent } from './components/right-side-bar.component';
 import { PageComponent } from './components/page.component';
@@ -14,6 +17,12 @@ import { VidRootDirective } from './directives/vid-root.directive';
 import { VideoHandlersListContainerComponent } from './components/video-handlers-list-container.component';
 import { VideoHandlerComponent } from './components/video-handler/video-handler.component';
 import { HeaderComponent } from './components/header/header.component';
+
+const routes: Routes = [
+  { path: 'youtube', component: YoutubeVideosComponent },
+  { path: 'form', component: FormBuilderComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'youtube' },
+];
 
 @NgModule({
   declarations: [
@@ -30,8 +39,9 @@ import { HeaderComponent } from './components/header/header.component';
     VideoHandlersListContainerComponent,
     VideoHandlerComponent,
     HeaderComponent,
+    YoutubeVideosComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
 })
