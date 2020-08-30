@@ -36,24 +36,43 @@ export class VideosService {
   }
 
   play(videoId: string): void {
-    const index = this.videos.findIndex((v) => v.videoId === videoId);
-
-    this.videos[index].status = 'onPlay';
-    this.videos[index].player.playVideo();
+    this.setStatus(videoId, 'onPlay').player.playVideo();
   }
 
   pause(videoId: string): void {
-    const index = this.videos.findIndex((v) => v.videoId === videoId);
-
-    this.videos[index].status = 'onPause';
-    this.videos[index].player.pauseVideo();
+    this.setStatus(videoId, 'onPause').player.pauseVideo();
   }
 
   stop(videoId: string): void {
-    const index = this.videos.findIndex((v) => v.videoId === videoId);
+    this.setStatus(videoId, 'onPause').player.stopVideo();
+  }
 
-    this.videos[index].status = 'onStop';
-    this.videos[index].player.stopVideo();
+  playAll(): void {
+    this.videos.forEach((video) => {
+      this.play(video.videoId);
+    });
+  }
+
+  pauseAll(): void {
+    this.videos.forEach((video) => {
+      this.pause(video.videoId);
+    });
+  }
+
+  stopAll(): void {
+    this.videos.forEach((video) => {
+      this.stop(video.videoId);
+    });
+  }
+
+  private setStatus(videoId: string, status: 'onPlay' | 'onPause'): IVideo {
+    const index = this.videos.findIndex((v) => v.videoId === videoId);
+    const video = this.videos[index];
+
+    video.status = status;
+    video.statusChanged(status);
+
+    return video;
   }
 
   private getParamsFromUrl(url: string): any {
