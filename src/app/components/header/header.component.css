@@ -1,10 +1,6 @@
 .app-header {
   padding: 20px;
-  background: #fdfdfd;
+  background: #202020;
   margin-bottom: 30px;
-  box-shadow: 0 0 10px rgb(161, 161, 161);
-}
-
-.fas {
-  margin-right: 10px;
+  /* box-shadow: 0 0 10px rgb(161, 161, 161); */
 }

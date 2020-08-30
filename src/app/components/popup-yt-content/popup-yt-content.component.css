@@ -1,5 +1,6 @@
 .app-popup-yt-content {
   text-align: center;
+  color: #eee;
 }
 
 .app-yt-link-field {
@@ -10,8 +11,14 @@
   font-size: 1.2rem;
   width: 100%;
 
-  border: 1px solid rgb(214, 214, 214);
+  border: 1px solid transparent;
   margin: 20px 0;
+  color: #eee;
+  background-color: #414141;
+}
+
+.app-yt-link-field:focus {
+  border: 1px solid rgb(119, 119, 119);
 }
 
 .btns-group {
